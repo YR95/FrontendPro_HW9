@@ -14,17 +14,20 @@
 //task 1
 console.log(`Вивести числа від 20 до 30 через пропуск, використовуючи крок 0,5 (20 20,5 21 21,5….).`);
 let res = '';
-for (let i = 20; i < 31; i = i + 0.5) {
-  res = res + i + '  ';
+let inc = 20;
+while (inc <= 30) {
+  res = res + inc + ' , ';
+  inc = inc + 0.5;
 }
-console.log(res);
+console.info(`i = ${res}`);
 
 //task 2
 console.log(`Один долар коштує 27 гривень. Вивести дані з розрахунком вартості 10, 20, 30... 100 доларів.`);
-let dolar = 27;
 res = '';
-for (let i = 10; i < 101; i = i + 10) {
-  res = res + i * 27 + '  ';
+inc = 10;
+while (inc <= 100) {
+  res = res + inc * 27 + '  ';
+  inc = inc + 10;
 }
 console.log(res);
 
@@ -32,11 +35,13 @@ console.log(res);
 console.log(`Дане ціле число. Вивести всі цілі числа від 1 до 100, квадрат яких не перевищує числа N.`);
 let number = parseInt(prompt('Input integer',
   '10'));
-for (let i = 1; i < 101; i++) {
-  if (number >= Math.pow(i,
+inc = 1;
+while (inc <= 100) {
+  if (number >= Math.pow(inc,
     2)) {
-    console.log(i);
+    console.log(inc);
   }
+  inc++;
 
 }
 
@@ -46,11 +51,13 @@ console.log(`Дане ціле число. З'ясувати, чи є воно �
 number = parseInt(prompt('Input integer',
   '10'));
 let count = 0;
+inc = 0;
 if (number >= 1) {
-  for (i = 0; i <= number; i++) {
-    if (number % i === 0) {
+  while (inc <= number) {
+    if (number % inc === 0) {
       count++;
     }
+    inc++;
   }
   count > 2 ? console.log(`парне`) : console.log(`непарне`);
 
@@ -63,4 +70,3 @@ number = parseInt(prompt('Input integer',
   '9'));
 res = Math.log(number) / Math.log(3);
 (res.toFixed(1) % 1) > 0 ? console.log('не можна') : console.log(`можна`);
-
